@@ -1,0 +1,14 @@
+(executables
+ (names test_maxargs driver)
+; (preprocess
+;  (staged_pps
+;    ppx_import
+;    ppx_deriving.show))
+ (flags
+  (:standard -warn-error -A)))
+
+(ocamllex
+ (modules lexer))
+
+(menhir
+ (modules parser))
