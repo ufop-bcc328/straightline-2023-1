@@ -34,6 +34,7 @@ In order to resolve possible conflicts during syntactic analysis, the following 
 |`*` `\`|left|
 |`+` `-`|left|
 |`:=`|right|
+|`;`|right|
 
 ## Lexical symbols
 

@@ -20,7 +20,7 @@
 
 %start <stm> program
 
-%left SEMICOLON
+%right SEMICOLON
 %left PLUS MINUS
 %left TIMES DIV
 
