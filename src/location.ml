@@ -3,10 +3,8 @@
 module L = Lexing
 
 (* type for position in source code, borrowed from the standard library *)
-(* type position = [%import: Lexing.position]
-     [@@deriving show] *)
-
-type position = Lexing.position
+type position = [%import: Lexing.position]
+     [@@deriving show]
 
 (* type for location, containing starting and ending positions *)
 type t = position * position

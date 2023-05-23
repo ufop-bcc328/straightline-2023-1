@@ -15,10 +15,11 @@ pkgs.stdenv.mkDerivation {
     ocamlPackages.ppxlib
     ocamlPackages.ppx_import
     ocamlPackages.ppx_deriving
+    ocamlPackages.printbox
+    ocamlPackages.printbox-text
     ocamlPackages.menhir
     ocamlPackages.utop
     ocamlPackages.ocaml-lsp
-    ocamlPackages.camomile
 
     pkgs.rlwrap
 

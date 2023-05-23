@@ -1,9 +1,14 @@
 (executables
- (names test_maxargs driver)
-; (preprocess
-;  (staged_pps
-;    ppx_import
-;    ppx_deriving.show))
+ (names
+   test_maxargs
+   driver)
+ (libraries
+   printbox
+   printbox-text)
+ (preprocess
+  (staged_pps
+    ppx_import
+    ppx_deriving.show))
  (flags
   (:standard -warn-error -A)))
 
