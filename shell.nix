@@ -12,14 +12,15 @@ pkgs.stdenv.mkDerivation {
     ocamlPackages.dune_3
     ocamlPackages.findlib # essential
     ocamlPackages.ocaml
+    ocamlPackages.utop
+    ocamlPackages.ocaml-lsp
     ocamlPackages.ppxlib
-    ocamlPackages.ppx_import
     ocamlPackages.ppx_deriving
+    ocamlPackages.ppx_expect
+    ocamlPackages.ppx_import
     ocamlPackages.printbox
     ocamlPackages.printbox-text
     ocamlPackages.menhir
-    ocamlPackages.utop
-    ocamlPackages.ocaml-lsp
 
     pkgs.rlwrap
 

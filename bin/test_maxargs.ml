@@ -1,4 +1,5 @@
 open Absyn
+
 let p1 =
   CompoundStm (
     AssignStm ("a", OpExp (Plus, NumExp 5, NumExp 3)),
@@ -17,4 +18,4 @@ let p1 =
     )
   )
 
-let () = print_int (Maxargs.maxargs p1)
+let () = Format.printf "maxargs: %i\n" (Maxargs.maxargs p1)

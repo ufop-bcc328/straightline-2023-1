@@ -1,14 +1,15 @@
-(executables
- (names
-   test_maxargs
-   driver)
+(library
+ (name compiler)
+ (wrapped false)
+ (inline_tests)
  (libraries
    printbox
    printbox-text)
  (preprocess
   (staged_pps
     ppx_import
-    ppx_deriving.show))
+    ppx_deriving.show
+    ppx_expect))
  (flags
   (:standard -warn-error -A)))
 
@@ -16,4 +17,5 @@
  (modules lexer))
 
 (menhir
- (modules parser))
+ (modules parser)
+ (flags --explain))

@@ -1,0 +1,10 @@
+(executables
+ (names
+   test_maxargs
+   driver)
+ (libraries
+   compiler
+   printbox
+   printbox-text)
+ (flags
+  (:standard -warn-error -A)))

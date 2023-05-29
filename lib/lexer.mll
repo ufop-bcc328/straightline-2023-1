@@ -7,7 +7,7 @@
 
 let spaces = [' ' '\t']+
 let comment = '#' [^ '\n']*
-let num = ['0'-'9']+ ('.' ['0'-'9']+)?
+let num = ['0'-'9']+
 let id = ['a'-'z' 'A'-'Z']+ ['a'-'z' 'A'-'Z' '0'-'9' '_']*
 
 rule token = parse
