@@ -14,6 +14,6 @@
    ppx_expect
    ppx_import
    printbox
-   printbox)
+   printbox_text)
  (allow_empty))
  
