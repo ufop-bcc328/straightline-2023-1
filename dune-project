@@ -12,6 +12,8 @@
    menhir
    ppx_deriving
    ppx_expect
-   ppx_import)
+   ppx_import
+   printbox
+   printbox)
  (allow_empty))
  
