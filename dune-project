@@ -11,7 +11,7 @@
    dune
    menhir
    ppx_deriving
-   ppx_expect
+   (ppx_expect :with-test)
    ppx_import
    printbox
    printbox-text)

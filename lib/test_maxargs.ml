@@ -102,3 +102,87 @@ let%expect_test "test programs" =
         └─IdExp x
 
     maxargs: 5 |}];
+
+  check {|
+    x := 2;
+    if 10*x - 1 then
+      y := x * 3;
+      print(x, y)
+    else
+      print(x + 1)
+    end
+    |};
+  [%expect{|
+    CompoundStm
+    ├─AssignStm
+    │ ├─x
+    │ └─NumExp 2
+    └─IfStm
+      ├─OpExp -
+      │ ├─OpExp *
+      │ │ ├─NumExp 10
+      │ │ └─IdExp x
+      │ └─NumExp 1
+      ├─CompoundStm
+      │ ├─AssignStm
+      │ │ ├─y
+      │ │ └─OpExp *
+      │ │   ├─IdExp x
+      │ │   └─NumExp 3
+      │ └─PrintStm
+      │   ├─IdExp x
+      │   └─IdExp y
+      └─PrintStm
+        └─OpExp +
+          ├─IdExp x
+          └─NumExp 1
+
+    maxargs: 2 |}];
+
+  check {|
+    x := 20;
+    while x do
+      y := x*x - 5*x + 1;
+      print(x, x+y, x-y);
+      x := x - 1
+    end;
+    print(x)
+    |};
+[%expect{|
+  CompoundStm
+  ├─AssignStm
+  │ ├─x
+  │ └─NumExp 20
+  └─CompoundStm
+    ├─WhileStm
+    │ ├─IdExp x
+    │ └─CompoundStm
+    │   ├─AssignStm
+    │   │ ├─y
+    │   │ └─OpExp +
+    │   │   ├─OpExp -
+    │   │   │ ├─OpExp *
+    │   │   │ │ ├─IdExp x
+    │   │   │ │ └─IdExp x
+    │   │   │ └─OpExp *
+    │   │   │   ├─NumExp 5
+    │   │   │   └─IdExp x
+    │   │   └─NumExp 1
+    │   └─CompoundStm
+    │     ├─PrintStm
+    │     │ ├─IdExp x
+    │     │ ├─OpExp +
+    │     │ │ ├─IdExp x
+    │     │ │ └─IdExp y
+    │     │ └─OpExp -
+    │     │   ├─IdExp x
+    │     │   └─IdExp y
+    │     └─AssignStm
+    │       ├─x
+    │       └─OpExp -
+    │         ├─IdExp x
+    │         └─NumExp 1
+    └─PrintStm
+      └─IdExp x
+
+  maxargs: 3 |}];

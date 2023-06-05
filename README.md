@@ -53,3 +53,29 @@ a := 5 + 3;
 b := ( print(a, a-1), 10*a);
 print(b)
 ```
+
+# Activity
+
+You are going to extend the straightline programming language to include two commands:
+
+- a selection command:
+  ```
+  if <condition> then <command1> else <command2> end
+  ```
+  where `<condition>` is an expression and `<command1>` and `<command2>` are commands. When executred, `<condition>` is evaluated and its value is checked: if it is not zero, `<command1>` is executred and `<command2>` is ignored; otherwise `<command1>` is ignored and `<command2>` is executed.
+
+- a repetition command:
+  ```
+  while <condition> do <body> end
+  ```
+  where `<condition>` is an expression and `<body>` is a command. When executred, `<condition>` is evaluated and it value is checked: if it is not zero, `<body>` is executed and the process repeats.
+
+You need to add appropriate  value constructors `IfExp` and `WhileExp` to type `stm` in the module in file `lib/absyn.ml`.
+
+Also the module in `lib/absyntree.ml` needs to be modified in order to take into account these new value constructors when commands are converted to general trees for proper drawing.
+
+The module in `lib/maxargs.ml` should also be updated accordingly.
+
+The code needed for the lexical and syntatical analysis of these new commands are already included as comments in the lexical specification `lib/lexer.mll` and in the grammar `lib/parser.mly`. It should be uncomment.
+
+Finally the all the tests in `lib/test_maxargs.ml` should succeed.
