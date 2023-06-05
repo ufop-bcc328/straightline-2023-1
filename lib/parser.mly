@@ -15,6 +15,14 @@
 %token                 SEMICOLON
 %token                 ASSIGN
 %token                 PRINT
+(* UNCOMMENT this for the if and while commands
+%token                 IF
+%token                 THEN
+%token                 ELSE
+%token                 WHILE
+%token                 DO
+%token                 END
+*)
 %token <int>           NUM
 %token <string>        ID
 
@@ -34,6 +42,10 @@ stm:
 | a=stm SEMICOLON b=stm { CompoundStm (a, b) }
 | x=ID ASSIGN e=exp { AssignStm (x, e) }
 | PRINT LPAREN l=explist RPAREN { PrintStm l }
+(* UNCOMMENT this for the if and while commands
+| IF test=exp THEN s1=stm ELSE s2=stm END { IfStm (test, s1, s2) }
+| WHILE test=exp DO body=stm END { WhileStm (test, body) }
+*)
 ;
 
 exp:

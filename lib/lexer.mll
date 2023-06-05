@@ -24,6 +24,14 @@ rule token = parse
   | ';'        { Parser.SEMICOLON }
   | ":="       { Parser.ASSIGN }
   | "print"    { Parser.PRINT }
+  | "if"       { Parser.IF }
+  (* UNCOMMENT this for the if and while commands
+  | "then"     { Parser.THEN }
+  | "else"     { Parser.ELSE }
+  | "while"    { Parser.WHILE }
+  | "do"       { Parser.DO }
+  | "end"      { Parser.END }
+  *)
   | num as lxm { Parser.NUM (int_of_string lxm) }
   | id as lxm  { Parser.ID lxm }
   | eof        { Parser.EOF }
