@@ -70,7 +70,7 @@ You are going to extend the straightline programming language to include two com
   ```
   where `<condition>` is an expression and `<body>` is a command. When executred, `<condition>` is evaluated and it value is checked: if it is not zero, `<body>` is executed and the process repeats.
 
-You need to add appropriate  value constructors `IfExp` and `WhileExp` to type `stm` in the module in file `lib/absyn.ml`.
+You need to add appropriate  value constructors `IfStm` and `WhileStm` to type `stm` in the module in file `lib/absyn.ml`.
 
 Also the module in `lib/absyntree.ml` needs to be modified in order to take into account these new value constructors when commands are converted to general trees for proper drawing.
 
